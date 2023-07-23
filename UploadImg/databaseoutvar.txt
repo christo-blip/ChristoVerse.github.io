@@ -1,0 +1,67 @@
+<!--------<div class="col-md-6">
+       
+<?php// foreach($users as $user):?>
+<hr>
+<h4> <?php// echo $user['Title'];?> </h4>
+<img src="images/<?php echo $user['Image']?>" class="img-thumbnail" style="width:100%">
+<?php //echo $user['Theme'];?>
+<?php //echo $user['Description'];?>
+<a href="<?php //echo $user['Link'];?>" target="_blank"> <?php //echo $user['Link'];?> </a>
+<?php //endforeach; ?>
+  </div>-------->
+
+<!---------------->
+
+<div class="container">
+  <div class="row" style="display:flex;align-items:center;flex-direction:row;flex-wrap:wrap">
+  <?php foreach($users as $user):
+    ?>
+
+
+    <div class="col-3" style="border:1px solid green">
+      
+    col
+    <h4> <?php// echo $user['Title'];?> </h4>
+<img src="images/<?php echo $user['Image']?>" class="img-thumbnail" style="width:20%">
+<?php //echo $user['Theme'];?>
+<?php //echo $user['Description'];?>
+<a href="<?php //echo $user['Link'];?>" target="_blank"> <?php //echo $user['Link'];?> </a>
+  </div>
+  <!------>    
+  <div class="col-3" style="border:1px solid green">
+    
+  col
+  <h4> <?php// echo $user['Title'];?> </h4>
+<img src="images/<?php echo $user['Image']?>" class="img-thumbnail" style="width:20%">
+<?php //echo $user['Theme'];?>
+<?php //echo $user['Description'];?>
+<a href="<?php //echo $user['Link'];?>" target="_blank"> <?php //echo $user['Link'];?> </a>
+</div>
+    <!------>
+<div class="col-3" style="border:1px solid green">
+  
+col
+<h4> <?php// echo $user['Title'];?> </h4>
+<img src="images/<?php echo $user['Image']?>" class="img-thumbnail" style="width:20%">
+<?php //echo $user['Theme'];?>
+<?php //echo $user['Description'];?>
+<a href="<?php //echo $user['Link'];?>" target="_blank"> <?php //echo $user['Link'];?> </a>
+</div>
+    <!------>
+<div class="col-3" style="border:1px solid green">
+  
+col
+<h4> <?php// echo $user['Title'];?> </h4>
+<img src="images/<?php echo $user['Image']?>" class="img-thumbnail" style="width:20%">
+<?php //echo $user['Theme'];?>
+<?php //echo $user['Description'];?>
+<a href="<?php //echo $user['Link'];?>" target="_blank"> <?php //echo $user['Link'];?> </a>
+</div>
+  </div>
+ 
+
+  <div>a;dskfjalkfjlaksdj</div>
+
+  <?php endforeach; ?>
+</div>
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <form autocomplete="off" action="http://localhost/portfolio/sample/connect.php" method="POST">
+            <i class="fas fa-paper-plane"></i>
+            <div class="input-group">
+                <label>Full name</label>
+                <input type="text" placeholder="Enter your name" id="contact-name" onkeyup="validateName()" name="name">
+                <span id="name-error"></span>
+            </div>
+
+            <div class="input-group">
+                <label>Phone No.</label>
+                <input type="tel" placeholder="123 456 7890" name='phonenumber' id="contact-phone" onkeyup="validatePhone()">
+                <span id="phone-error"></span>
+            </div>
+
+            <div class="input-group">
+                <label>Email Id</label>
+                <input type="email" placeholder="Enter Email" name="email" id="contact-email" onkeyup="validateEmail()">
+                <span id="email-error"></span>
+            </div>
+                   
+            <div class="input-group">
+                <label>Your Message</label>
+                <textarea  rows='5' col='' type="text" name='message' placeholder="Enter your message" id="contact-message" onkeyup="validateMessage()">
+                    </textarea>
+                    <span id="message-error"></span>
+            </div>
+            <button  type="submit"  name='submit' id="btn" onclick="return validateForm()">Submit</button>
+            <span id="subit-error"></span>
+        </form>
+
+
+
+
+
+
+    </div>
+<form>
+    </form>
+    <script>
+        var nameError=document.getElementById('name-error');
+        var phoneError=document.getElementById('phone-error');
+        var emailError=document.getElementById('email-error');
+        var messageError=document.getElementById('message-error');
+        var submitError=document.getElementById('subit-error');
+        var button=document.getElementById('btn');
+//name validation  
+        function validateName(){
+        var name = document.getElementById('contact-name').value;
+
+        if(name.length == 0){
+            nameError.innerHTML = 'Name is required';
+            return false;
+        }
+        if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
+            nameError.innerHTML = 'Write full name';
+            return false;
+        }
+        nameError.innerHTML = 'valid';
+        return true;
+    }
+//phone validation
+    function validatePhone(){
+        var phone = document.getElementById('contact-phone').value;
+
+        if(phone.length == 0){
+            phoneError.innerHTML = 'Phone no is required';
+            return false;
+        }
+        if(!phone.match(/^[0-9]{10}$/)) {
+            phoneError.innerHTML = 'Only digits please.';
+            return false;
+        }
+        phoneError.innerHTML='valid';
+        return true;
+    }
+ //Email validation
+        function validateEmail(){
+            var email = document.getElementById('contact-email').value;
+        
+            if(email.length == 0){
+                emailError.innerHTML='Email is required'
+                return false
+            }
+            if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+                emailError.innerHTML = 'Email Invalid'
+                return false;
+            }
+
+            emailError.innerHTML = 'valid'
+            return true;
+        }
+//Message validation
+function validateMessage(){
+    var message = document.getElementById('contact-message').value;
+    var required = 30;
+    var left = required - message.length;
+    if(left>0){
+        messageError.innerHTML = left+'more characters required';
+        return false;
+    }
+
+    messageError.innerHTML = 'valid'
+    return true;
+}  
+//button function
+function validateForm(){
+    if((messageError.innerHTML || nameError.innerHTML || phoneError.innerHTML) =='valid'){   
+        document.getElementById('contact-name').value= '';
+        document.getElementById('contact-phone').value= '';
+        document.getElementById('contact-email').value= '';
+        document.getElementById('contact-message').value= '';
+        return true;
+
+
+    }
+    else
+    {
+        return false;
+    }
+}
+    
+ 
+          </script>    
+</body>
+</html>
